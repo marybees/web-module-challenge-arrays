@@ -169,6 +169,7 @@ let flavors = ["Banana Nut Fudge",
 
 function copy(newArray, oldArray) {
     newArray = [...oldArray];
+    return newArray;
 }
 
 console.log(copy(modifiedFlavors, flavors));
