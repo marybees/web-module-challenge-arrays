@@ -285,7 +285,12 @@ var regionalFlavors = ["Pink Bubblegum",
     "Caramel 'n' Cookies"]
 
 function getRandomFlavors(flavorList1, flavorList2, flavorList3, flavorList4) {
-    let listLength = flavorList1.length + flavorList2.length + flavorList3.length + flavorList4.length;
-    console.log(listLength);
-    let randomNumber = Math.floor(Math.random() * 10);
-}
+    let consolodatedArrayOfFlavors = [...flavorList1, ...flavorList2, ...flavorList3, ...flavorList4];
+    let consolodatedArrayOfFlavorsLength = consolodatedArrayOfFlavors.length;
+    for (let i = 0; i < 31; i++) {
+        let randomIndex = Math.floor(Math.random() * consolodatedArrayOfFlavorsLength);
+        let valueAtRandomIndex = consolodatedArrayOfFlavors[randomIndex];
+        return valueAtRandomIndex;
+    }
+
+console.log(getRandomFlavors(originalFlavors, newFlavors, seasonalFlavors, regionalFlavors));
